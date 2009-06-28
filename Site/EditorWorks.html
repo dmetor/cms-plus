@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> New Document </TITLE>
+	<script type="text/javascript" src="js/tiny_mce/tiny_mce_src.js"></script> 
+	<script src="js/jquery.1.3.2.min.js" type="text/javascript"></script>
+	
+    <style>
+        body
+        {
+        	font-family:Tahoma,Arial,Helvetica,Geneva,sans-serif;
+        }
+        
+        a:link, a:visited, a:active {
+            color:#BDD1B8;
+        }
+        a:link, a:visited, a:active {
+            background-color:transparent;
+            text-decoration:none;
+        }
+        
+        #ImageManager
+        {
+            position: absolute;
+            z-index: 500;
+            top: 350px;
+            width: 250px;
+            height: 100px;
+            border: solid 4px #eee;
+        }
+        
+        /* --- image floating / editor constructs ------------------------------------------------------ */
+
+        .image-float-left { float: left; margin: 0px 10px 8px 0px; }
+        .image-float-right { float: right; margin: 0px 0px 8px 10px; }
+        .image-block { display: block; }
+        .image-inline { display: inline; }         
+        .image-float-left img, .image-float-right img , .image-float-none img { border: 1px solid #ccc; text-decoration: none; }
+        .image-caption { display: block; font-size: 9px; font-family: Verdana, sans-serif; line-height: 14px; padding-top: 5px; padding-bottom: 10px;  }
+           
+    </style>	
+
+	<script type="text/javascript">
+	    var editorSelection = null;
+	    tinyMCE.init({
+	        // General options
+	        mode: "exact",
+	        elements: "elm1",
+	        theme: "advanced",
+	        skin: "thebigreason",
+	        init_instance_callback: "EditorInitCompleted",
+	        plugins: "safari,pagebreak,style,save,advhr,advimage,advlink,emotions,iespell,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,inlinepopups",
+	        // Theme options
+	        theme_advanced_buttons1: "bold,italic,underline,strikethrough,|,image,media,code,hr,template,insertfile,iespell,|,justifyleft,justifycenter,justifyright,justifyfull,|,undo,redo,|,styleselect,formatselect,fontselect,fontsizeselect",
+	        theme_advanced_buttons2: "cut,copy,paste,|,bullist,numlist,|,outdent,indent,blockquote,|,link,unlink,cleanup,|,insertdate,inserttime,preview,|,forecolor,backcolor,|hr, print",
+	        theme_advanced_buttons3: "",
+
+
+	        setup: function(ed) {
+	            ed.onNodeChange.add(function(ed, cm, e) {
+	                // Activates the link button when the caret is placed in a anchor element
+	                if (e.nodeName == "IMG") {
+	                    $('#elm1_ifr').contents().find('#' + e.id).click(function() {
+	                        return false;
+	                    });
+	                }
+	            });
+
+	            /*
+	            // Add a custom button
+	            ed.addButton('CustomImage', {
+	            title: 'Image Manager',
+	            onclick: function() {
+	            // Add you own code to execute something on click
+	            jQuery("#testDiv").show();
+
+	                }
+	            });
+	            */
+	        },
+
+
+
+	        theme_advanced_toolbar_location: "top",
+	        theme_advanced_toolbar_align: "left",
+	        theme_advanced_statusbar_location: "bottom",
+	        theme_advanced_resizing: false
+
+	        // Example content CSS (should be your site CSS)
+	        //content_css : "css/content.css",
+
+	        // Drop lists for link/image/media/template dialogs
+	        /*
+	        template_external_list_url : "lists/template_list.js",
+	        external_link_list_url : "lists/link_list.js",
+	        external_image_list_url : "lists/image_list.js",
+	        media_external_list_url : "lists/media_list.js"
+	        */
+
+	    });
+
+		function EditorInitCompleted() {
+			//$("#elm1_toolbar3").css("display", "none");
+			//$("#elm1_ifr").css("height","240px");
+		    //alert('EditorInitCompleted');
+			//scanAndAttachImages();
+		}
+
+
+		//var _selection = null;
+		function OpenImageManager(ed) {
+		    var IsInsert = true;
+		    activeBookmark = tinyMCE.activeEditor.selection.getBookmark("simple");
+			//_selection = ed.selection.getRng();
+		    if (ed.dom.getAttrib(ed.selection.getNode(), 'src') != "")
+		        IsInsert = false;
+		    if (!IsInsert) {
+		        $("#txtImgSrc").val(ed.dom.getAttrib(ed.selection.getNode(), 'src'));
+		        $("#txtImgAlt").val(ed.dom.getAttrib(ed.selection.getNode(), 'alt'));
+		        $("#txtImgStyle").val(ed.dom.getAttrib(ed.selection.getNode(), 'style'));
+		    }
+		    scanAndAttachImages();
+		    
+		    jQuery("#testDiv").show();
+		}
+		
+
+
+		//tinyMCE.get('elm1').selection
+		
+		$(function() {
+			scanAndAttachImages();
+		});
+
+
+		var editorToolbarPageTopMargin = 130; //px
+		var editorToolbarPageLeftMargin = 5; //px
+
+		function scanAndAttachImages() {
+		    alert('scanning');
+		    var editorFrame = $('elm1_ifr').contents().get(0);
+		    $('IMG', editorFrame).bind('click', function(event) {
+		        alert('hit');
+		        return false;
+		    });
+
+//		    $('#elm1_ifr').contents().find('img').each(function() {
+//		         $(this).mouseenter(function() {
+//		            var top = $(this).offset().top;
+//		            var left = $(this).offset().left;
+//		            $("#ImageToolManager").show("fast").css({ 'top': (top + editorToolbarPageTopMargin) + 'px', 'left': (left + editorToolbarPageLeftMargin) + 'px' });
+//		        });
+//		        $(this).mouseleave(function() {
+//		            $("#ImageToolManager").hide("fast");
+//		        });
+//		    });
+		}
+
+
+    
+		function GetEditorContent()
+		{
+			var content = tinyMCE.get('elm1').getContent();
+			alert(content);
+        }
+
+        var activeBookmark;
+        function AddImagetoEditor() {
+            var imgsrc = $("#txtImgSrc").val();
+            var imgalt = $("#txtImgAlt").val();
+            var imgstyle = $("#txtImgStyle").val();
+            var imgid = $("#txtid").val();
+             
+            tinyMCE.get('elm1').focus();
+            //tinyMCE.activeEditor.selection.moveToBookmark(activeBookmark);
+            tinyMCE.activeEditor.selection.moveToBookmark(activeBookmark);
+			//tinyMCE.activeEditor.selection.setRng(this._selection);
+            tinyMCE.activeEditor.selection.setContent("<img src='" + imgsrc + "' id='" + imgid + "' alt='" + imgalt + "' style='" + imgstyle + "' /> ");
+            jQuery("#testDiv").hide(); 
+        }
+		
+
+
+	</script> 
+ </HEAD>
+ <BODY>
+<textarea id="elm1" name="elm1" rows="25" cols="50" style="width: 80%">
+	Denemelerle yaþýyoruz.
+</textarea>
+
+<div id="testDiv" style="position:absolute;display:none; background-color:#eee; bottom:50px; right:50px;width:250px;height:200px;border:solid 2px #000">
+  img : <input type="text" id="txtImgSrc" value="images/thumb11.jpg" />
+  <br />
+  alt : <input type="text" id="txtImgAlt" value="During development" />
+  <br />
+  align : <input type="text" id="txtImgStyle" value="float:left;margin:5px;" />
+  <br />  
+  id : <input type="text" id="txtid" value="78954" />
+  <br />  
+  <input type="button" value="insert image" onclick="AddImagetoEditor();" />
+</div>
+
+    <!--
+    <div id="ImageToolManager" style="postion:fixed; padding: 6px 10px; position: absolute; background-color: rgb(48, 48, 48);
+        font-size: 9px; color: rgb(238, 238, 238); -moz-border-radius-topleft: 2px; -moz-border-radius-topright: 2px;
+        -moz-border-radius-bottomright: 2px; -moz-border-radius-bottomleft: 2px; opacity: 0.95;display:none;
+        left: 39px; top: 310px;">
+        <strong>Image</strong> | <a onclick="alert(tinyMCE.get('elm1').getSel());return(false);"
+            href="javascript:noop();">Left</a> | <a onclick="tinyMCE.activeEditor.changeImageAlign('inline');return(false);"
+                href="javascript:noop();">Inline</a> | <a onclick="tinyMCE.activeEditor.changeImageAlign('block');return(false);"
+                    href="javascript:noop();">Block</a> | <a onclick="tinyMCE.activeEditor.changeImageAlign('float-right');return(false);"
+                        href="javascript:noop();">Right</a> | <a onclick="tinyMCE.activeEditor.editImageDialog();return(false);"
+                            href="javascript:noop();">Edit</a> | <a onclick="tinyMCE.activeEditor.removeImage();return(false);"
+                                href="javascript:noop();">Remove</a>
+    </div>
+    -->
+<br/>	
+
+
+<input type="button" value="Get Content" onclick="GetEditorContent();"/>
+ </BODY>
+</HTML>
+
+
+

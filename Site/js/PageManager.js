@@ -1,0 +1,196 @@
+var __windowWidth = 0;
+var __windowHeight = 0;
+
+function CheckWindowSizeEx() {
+    var myWidth = 0, myHeight = 0;
+    if (typeof (window.innerWidth) == 'number') {
+        //Non-IE
+        myWidth = window.innerWidth;
+        myHeight = window.innerHeight;
+    } else if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+        //IE 6+ in 'standards compliant mode'
+        myWidth = document.documentElement.clientWidth;
+        myHeight = document.documentElement.clientHeight;
+    } else if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
+        //IE 4 compatible
+        myWidth = document.body.clientWidth;
+        myHeight = document.body.clientHeight;
+    }
+    __windowWidth = myWidth;
+    __windowHeight = myHeight;
+}
+
+var PageMode = "noticeAreaMode-content";
+
+var WidgetOptions = {
+  behaviour : {
+    useCookies : true
+  },
+  effects : {
+    effectDuration : 100,
+    widgetShow : 'fade',
+    widgetHide : 'slide',
+    widgetClose : 'slide',
+    widgetExtend : 'slide',
+    widgetCollapse : 'slide',
+    widgetOpenEdit : 'slide',
+    widgetCloseEdit : 'slide',
+    widgetCancelEdit : 'slide'
+  },
+	i18n : {
+	  editText : '<img src="css/images/edit.png" alt="Settings" width="16" height="16" />',
+	  closeText : '<img src="css/images/close.png" alt="Close" width="16" height="16" />',
+	  collapseText : '<img src="css/images/collapse.png" alt="Close" width="16" height="16" />',
+	  cancelEditText: '<img src="css/images/edit.png" alt="Settings" width="16" height="16" />',
+	  extendText : '<img src="css/images/extend.png" alt="Close" width="16" height="16" />'
+	}
+}
+
+
+
+var PageMode = "";
+
+$(document).ready(function() {
+	PageMode = "noticeAreaMode-preview";	
+    $("#appearance-control").click(function() {
+        if ($("#appearance-container").css("height") == "76px") {
+            ManageBottomController(true);
+        } else {
+            ManageBottomController(false);
+        }
+    });
+
+    $("#WebsiteManagement").click(function() {
+        ShowHideManagementMenu("management-strip");
+    });
+
+    $("#MemberShipManagement").click(function() {
+        ShowHideManagementMenu("member-management-strip");
+    });
+
+    $(".noticeAreaConfigure").click(function() {
+        //remove styles
+        $(this).addClass("active-mode").siblings().removeClass("active-mode");
+        $(this).addClass("active-mode").css({ 'padding': ' 4px 0px 2px 0pt', 'background-color': 'rgb(37, 37, 37)' }).siblings().css({ 'cursor': 'help', 'padding': '0px', 'background-color': '#353535' });
+
+        switch (this.id) {
+            case "noticeAreaMode-style":
+                $("#appearance-container").animate({
+                    height: "76px",
+                    opacity: 0.9
+                }, 500, function() {
+                    DisableWidgets();
+					HideEditMode();
+                });
+				PageMode = "noticeAreaMode-style";
+                break;
+            case "noticeAreaMode-structure":
+                EnableWidgets();
+				HideEditMode();
+				PageMode = "noticeAreaMode-structure";
+                break;
+            case "noticeAreaMode-preview":
+                DisableWidgets();
+				HideEditMode();
+                HideThemeArea();
+				PageMode = "noticeAreaMode-preview";
+                break;
+            case "noticeAreaMode-content":
+                DisableWidgets();
+                HideThemeArea();
+                ShowEditMode();
+				PageMode = "noticeAreaMode-content";
+                break;
+			default:
+                DisableWidgets();
+                HideThemeArea();
+                break;
+        }
+    });
+
+});
+
+
+function EnableWidgets() {
+    $('.widget-menu').show();
+    $.fn.EnableEasyWidgets();
+    HideThemeArea();
+
+	$(".widget").each(function() {
+        $(this).css({ "border": "#AAACAD solid 3px" });
+    });
+
+	$(".widget-header").each(function() {	
+		$(this).css({  'background-color': '#D4DFE2', 'border-bottom':' 2px solid #454443'});
+	});		 
+
+}
+
+function DisableWidgets() {
+    $.fn.DisableEasyWidgets();
+    $('.widget-menu').hide();
+    $(".widget").each(function() {
+         $(this).css({ "border": "Transparent solid 3px" });
+    });
+	$(".widget-header").each(function() {
+		$(this).css({  'background-color': 'Transparent', 'border-bottom':' 2px solid Transparent'});
+	});
+}
+
+
+function HideThemeArea() {
+    if ($("#appearance-container").css("display") != "none") {
+        $("#appearance-container").animate({
+            height: "0px",
+            opacity: 1
+        }, 500);
+    }
+}
+
+
+    var lastMenuItem = null;
+    var lastMenuItemState = "closed";
+
+    function ShowHideManagementMenu(menuItem) {
+        if (lastMenuItem != null) {
+            if (lastMenuItem != menuItem) {
+                $("#" + lastMenuItem).slideUp("fast", function() {
+                    $("#" + menuItem).slideDown("fast");
+                    lastMenuItem = menuItem;
+                    lastMenuItemState = "opened";
+                    return;
+                });
+            }
+        } else
+            lastMenuItem = menuItem;
+
+        if (lastMenuItemState == "closed") {
+            $("#" + menuItem).slideDown("fast");
+            lastMenuItemState = "opened";
+        } else {
+            $("#" + menuItem).slideUp("fast");
+            lastMenuItemState = "closed";
+        }
+    }
+
+
+    function ManageBottomController(expand) {
+        if (expand) {
+            //$("#appearance-container").css({ "height" : "380px" }); for ie
+            $("#appearance-container").stop().animate({
+                height: "380px",
+                opacity: 1
+            }, 500, function() {
+                //$("#appearance-container-frame").attr("src", "TemplateSelector.htm");
+            });
+            $("#appearance-control").text("-");
+
+            } else {
+            //$("#appearance-container").css({ "height": "76px" });
+            $("#appearance-container").stop().animate({
+                height: "76px",
+                opacity: 0.9
+            }, 500);
+            $("#appearance-control").text("+");
+        }
+    }          

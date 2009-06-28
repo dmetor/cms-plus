@@ -1,0 +1,12 @@
+$(document).ready(function() {
+	//scanAndAttachImages();
+});
+
+function scanAndAttachImages()
+{
+	$("img").each(function() {
+		$(this).click(function() {
+			alert(this);
+		});
+	});
+}
