@@ -1,0 +1,90 @@
+.widget-place {
+  margin: 0;
+  padding: 0;
+  float: left;
+  width: 100%;
+  height: auto;
+  list-style: none;
+  min-height: 400px;
+}
+
+
+.widget-placeholder {
+  color: #000;
+  margin: 1em;
+  border: dashed 2px #AAACAD;
+  background-color: #ccc;
+}
+
+
+.widget {
+  margin: 1em;
+  /*border: #AAACAD solid 3px;*/
+  border: solid 3px Transparent;
+}
+
+
+
+
+  .widget-content {
+    padding: 2px;
+  }
+
+    .widget-header img {
+      border: none;
+      vertical-align: middle;
+      background:Transparent !important;
+      padding:0px !important;
+    }
+
+    .widget-menu {
+		float:right;
+		vertical-align: middle;
+		margin-right:3px;
+    }
+
+      .widget-menu a {
+        margin: 0 0 0 0.5em;
+      }
+
+  .widget-editbox {
+    color: #000;
+    padding: 0.2em;
+	background:#4E4E4E url(images/gradient_bg.gif) repeat-x scroll left -1098px;
+	color:#FFFFFF;
+	display:none;
+  }
+
+
+
+
+   /*it must be customizable and depends on template*/	
+  .widget-header {
+	/*System*/
+	min-height:30px;
+	font: bold 2.25em 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-serif;
+	color: #115280; 
+	padding:10px 0 5px 10px;
+	letter-spacing: -1px;
+	border-bottom:2px solid #D2E9A4 !important;
+	display:block;
+	
+	/*
+    background-color: #ebebeb;
+	background-image:url(images/header_bg.gif);
+	*/
+  }
+
+  .widget-header a
+  {
+	color: #115280;
+	text-decoration: none;	
+  }
+
+/*	
+  .widget-header:hover {
+    background-color: #D4DFE2;
+	border-bottom: 2px solid #474844;
+	background-image:url(images/header_bg_hover.gif);
+  }
+*/
