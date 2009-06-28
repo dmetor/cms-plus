@@ -20,3 +20,21 @@ var HeaderManager = {
     }
 }
 
+
+var NotificationManager = {
+    ShowProgress: function(message) {   
+        $("#cmsplus-management-notification").stop().show().animate({
+            top:"100px",
+            right:"50px"
+        },200);
+    },
+    
+    HideProgress: function(){
+        $("#cmsplus-management-notification").stop().animate({
+            top:"90px",
+            right:"10px"
+        },200, function(){
+            $(this).hide();
+        });        
+    }
+}
