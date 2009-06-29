@@ -205,36 +205,35 @@
 {
     position:           fixed;
     right:               0px;    
-    top:               5px;
+    top:               15px;
     width:360px;
     z-index:            4951;
+    margin:0px;
 }  
   
   
 #toolbarmenu
 {
+	margin:0px !important;
+	height:50px !important;
 }
+
 
 #toolbarmenu li
 {
     float: left;
-    list-style: none;
-    height: 46px;
-    width:50px;   
-    margin-left:20px;  
+    list-style: none;  
+    margin-left:10px;  
 }
 #toolbarmenu li.backLava
 {
     background: url( images/tool-back.png ) no-repeat ;
-    height: 46px;
-    width:50px;
     z-index: 8;
     position: absolute;
 }
 #toolbarmenu li.backLava .leftLava
 {
-    height: 46px;
-    width:50px;
+
 }
 #toolbarmenu li a
 {
@@ -250,7 +249,8 @@
     float: left;
     position: relative;
     overflow: hidden;
-    margin-left:20px;  
+    margin-left:10px;  
+        height:50px;
 }
 
 #toolbarmenu li a img
