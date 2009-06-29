@@ -197,3 +197,71 @@
   }
   
   
+  
+  
+  
+  
+#cmsplus-management-toolbar
+{
+    position:           fixed;
+    right:               0px;    
+    top:               5px;
+    width:360px;
+    z-index:            4951;
+}  
+  
+  
+#toolbarmenu
+{
+}
+
+#toolbarmenu li
+{
+    float: left;
+    list-style: none;
+    height: 46px;
+    width:50px;   
+    margin-left:20px;  
+}
+#toolbarmenu li.backLava
+{
+    background: url( images/tool-back.png ) no-repeat ;
+    height: 46px;
+    width:50px;
+    z-index: 8;
+    position: absolute;
+}
+#toolbarmenu li.backLava .leftLava
+{
+    height: 46px;
+    width:50px;
+}
+#toolbarmenu li a
+{
+    font: bold 14px arial;
+    text-decoration: none;
+    color: #fff;
+    outline: none;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    z-index: 10;
+    display: block;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    margin-left:20px;  
+}
+
+#toolbarmenu li a img
+{
+    border:solid 0px Transparent;	
+    background:Transparent !important;
+    padding:0px !important;
+    margin-top:3px;
+}
+#toolbarmenu li a:hover, #toolbarmenu li a:active, #toolbarmenu li a:visited
+{
+    color: #fff;
+    border: none;
+}

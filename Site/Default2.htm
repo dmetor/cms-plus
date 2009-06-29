@@ -3,38 +3,47 @@
 <head>
     <title></title>
 
-    <script src="js/jquery.1.3.2.min.js" type="text/javascript"></script>
-    <script src="js/plus/GeneralManagement.js" type="text/javascript"></script>
+    <script src="js/plus/jquery.1.3.2.min.js" type="text/javascript"></script>
+    <script src="js/plus/jquery.easing.1.3.js" type="text/javascript"></script>
+    <script src="js/plus/jquery.lavalamp.1.3.2.js" type="text/javascript"></script>
 
+    <script src="js/plus/GeneralManagement.js" type="text/javascript"></script>
     <link href="css/easy-site-management.css" rel="stylesheet" type="text/css" />
-    <link href="css/WindowManager.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="Templates/TechJunkie/images/TechJunkie.css" type="text/css" />
 
     <script language="Javascript" type="text/javascript">
+        var query = new Object();
+        window.location.search.replace(
+	    new RegExp("([^?=&]+)(=([^&]*))?", 'g'),
+		    function($0, $1, $2, $3) {
+		        query[$1] = $3;
+		    }
+	    );
+
+        easing = query['e'] || 'Expo';
     $(document).ready(function() {
         HeaderManager.InitManagementMenu();
+		    $('#toolbarmenu').lavaLamp({
+			    fx: 'easeIn'+easing,
+			    speed: 500,
+			    autoReturn: false,
+			    setOnClick:true
+
+		    });
+
     });		
     </script>
-<style>
-
-  
-
-  
-  
-</style>
+    
 </head>
 <body>
     <div id="cms-header-menu-wrapper">
         <div id="header-menu-logo_header-menu" class="header-menu-logo_header-menu-normal">
         </div>
-                <input type="button" value="ShowMessage" onclick="NotificationManager.ShowProgress('aa');" />
-                <input type="button" value="ShowMessage" onclick="NotificationManager.HideProgress();" />
-
+        <input type="button" value="ShowMessage" onclick="NotificationManager.ShowProgress('aa');" />
+        <input type="button" value="ShowMessage" onclick="NotificationManager.HideProgress();" />
     </div>
     <div id="cmsplus-management-root-menu">
-
         <div class="striptBlock">
-        
             <div class="dashboard">
             </div>
             <h2>
@@ -123,17 +132,33 @@
             </div>
         </div>
     </div>
-    
     <div id="cmsplus-management-notification">
         <div class="icon">
-          <img src="css/images/notification-info.png" alt="" />
+            <img src="css/images/notification-info.png" alt="" />
         </div>
-        <div class="message">Saving your theme please wait..</div>
+        <div class="message">
+            Saving your theme please wait..</div>
     </div>
     
-	
-	
     
+    
+    <div id="cmsplus-management-toolbar">
+       <ul id="toolbarmenu">
+        <li>
+           <a href="#"><img src="css/images/edit.png" alt="" /></a> 
+        </li>
+        <li>
+           <a href="#"><img src="css/images/widget.png" alt="" /></a> 
+        </li>
+        <li>
+           <a href="#"><img src="css/images/theme.png" alt="" /></a> 
+        </li>
+        <li>
+           <a href="#"><img src="css/images/preview.png" alt="" /></a> 
+        </li>
+    </ul>    
+    </div>
+        
     
     <div id="wrap">
         <!--header -->
