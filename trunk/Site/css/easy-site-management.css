@@ -33,13 +33,6 @@
     cursor:pointer;  
 }
 
-.header-menu-logo_header-menu-normal  
-{
-    background-image: url(images/header-menu-logo0.png); 
-    background-repeat: no-repeat; 
-    background-position: -0px -0px; width: 131px; height: 55px; 
-}
-
 .header-menu-logo_header-menu-hover  
 {
     background-image: url(images/header-menu-logo0.png); 
@@ -206,7 +199,7 @@
     position:           fixed;
     right:               0px;    
     top:               15px;
-    width:360px;
+    width:340px;
     z-index:            4951;
     margin:0px;
 }  
