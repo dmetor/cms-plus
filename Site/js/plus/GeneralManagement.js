@@ -1,9 +1,14 @@
 ﻿
 var HeaderManager = {
-    menuState: 0, //default is closed 
+    menuState: 0, //default is closed
     InitManagementMenu: function() {
-    $("#header-menu-logo_header-menu").click(function() {
-        if (HeaderManager.menuState == 0) {
+        $("#cmsplus-rootmenu-master").hover(function() {
+            $(this).find("h2").css("color","#fff");
+        }, function() {
+            $(this).find("h2").css("color", "#ccc");
+        });
+        $("#cmsplus-rootmenu-master").click(function() {
+            if (HeaderManager.menuState == 0) {
                 $("#cmsplus-management-root-menu").slideDown(500);
                 HeaderManager.menuState = 1;
             } else {
@@ -18,6 +23,7 @@ var HeaderManager = {
             $(this).css({ "background-color": "Transparent" });
         });
     }
+
 }
 
 
