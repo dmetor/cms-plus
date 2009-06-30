@@ -86,6 +86,27 @@
 }
 
 
+#cmsplus-rootmenu-master
+{
+    position:fixed;top:28px;left:50px;
+    width:175px;
+    height:34px;
+    cursor:pointer;
+    /*background:url(images/rootmenu-selected.png) no-repeat;*/
+}
+
+#cmsplus-rootmenu-master img
+{
+    background-color:Transparent;float:left;border:solid 0px transparent;
+}
+
+#cmsplus-rootmenu-master h2
+{
+    margin-top:2px;
+    font-size:14px;
+    color:#ccc;
+}
+
 #cmsplus-management-root-menu .menuitems-wrapper .menuItem
 {
     width:100%;
@@ -189,16 +210,15 @@
     margin:25px;  	
   }
   
-  
-  
-  
+
+
   
   
 #cmsplus-management-toolbar
 {
     position:           fixed;
     right:               0px;    
-    top:               15px;
+    top:               18px;
     width:340px;
     z-index:            4951;
     margin:0px;
@@ -243,7 +263,7 @@
     position: relative;
     overflow: hidden;
     margin-left:10px;  
-        height:50px;
+    height:50px;
 }
 
 #toolbarmenu li a img
@@ -251,7 +271,7 @@
     border:solid 0px Transparent;	
     background:Transparent !important;
     padding:0px !important;
-    margin-top:3px;
+    margin-top:1px;
 }
 #toolbarmenu li a:hover, #toolbarmenu li a:active, #toolbarmenu li a:visited
 {
