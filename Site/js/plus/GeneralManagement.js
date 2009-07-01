@@ -22,6 +22,13 @@ var HeaderManager = {
         }, function() {
             $(this).css({ "background-color": "Transparent" });
         });
+
+        $("#cmsplus-websites-panel .domainArea").hover(function() {
+        $(this).css({ "color": "#831D1D" });
+        }, function() {
+            $(this).css({ "color": "#1F1914" });
+        });
+
     }
 
 }
