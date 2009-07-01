@@ -17,7 +17,7 @@
     letter-spacing:		normal !important;
     color:				#F2F2F2 !important;
     width:				100%;
-    height:				65px;
+    height:				80px;
     background:			url(images/cms-header-menu-wrapper-bac.png) repeat-x;
     /*
     opacity: 0.9;
@@ -45,7 +45,7 @@
 {
     position:           fixed;
     left:               0px;    
-    top:                65px;
+    top:                80px;
     background-color:#1F1914;
     width:1100px;
     height:180px;
@@ -88,7 +88,7 @@
 
 #cmsplus-rootmenu-master
 {
-    position:fixed;top:28px;left:50px;
+    position:fixed;top:40px;left:50px;
     width:175px;
     height:34px;
     cursor:pointer;
@@ -218,7 +218,7 @@
 {
     position:           fixed;
     right:               0px;    
-    top:               18px;
+    top:               32px;
     width:340px;
     z-index:            4951;
     margin:0px;
