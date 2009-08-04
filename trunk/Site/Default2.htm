@@ -4,57 +4,36 @@
     <title></title>
 
     <script src="js/plus/jquery.1.3.2.min.js" type="text/javascript"></script>
-
     <script src="js/plus/GeneralManagement.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="Templates/TechJunkie/images/TechJunkie.css" type="text/css" />
     <link href="css/easy-site-management.css" rel="stylesheet" type="text/css" />
 
-
-    
-    
-<style>
-#cmsplus-websites-panel .rightSide { background-image: url(css/images/cmsplus-dialogs0.png); background-repeat: no-repeat; background-position: -0px -184px; width: 14px; height: 21px; float:right;  }
-#cmsplus-websites-panel .leftSide { background-image: url(css/images/cmsplus-dialogs0.png); background-repeat: no-repeat; background-position: -14px -184px; width: 12px; height: 21px; float:left;}
-
-#cmsplus-websites-panel
-{
-    float:right; margin-right:10px;height:21px;margin-top:3px; 
-}
-
-#cmsplus-websites-panel .domainname-wrapper
-{
-    min-width:100px;height:21px;background-color:#DB7C2C;float:left;color:#1F1914;    
-}
-
-#cmsplus-websites-panel .domainArea
-{
-    margin-top:4px;float:left;cursor:pointer;
-} 
+    <link rel="stylesheet" href="Templates/TechJunkie/images/TechJunkie.css" type="text/css" />
 
 
+    <script language="javascript" type="text/javascript">
+      $(function(){
+          HeaderManager.InitManagementMenu();
+          $("#cmsplus-management-root-menu .Overview").click(function(){
+                $("#content-wrap").load("AnotherPage.htm?p" + Math.random());
+          });
+          $("#cmsplus-management-root-menu .Comments").click(function(){
+                $("#content-wrap").load("AnotherPage2.htm?p" + Math.random());
+          });
+      })
+    </script>
 
-</style>
 </head>
 <body>
-    <div id="cms-header-menu-wrapper">
-        <div style="height:49px">
-            <img src="css/images/cms-header-logo.png" style="background-color:Transparent;border:solid 0px transparent;padding:0px"/>        
-
-        <div id="cmsplus-rootmenu-master">
-          <img src="css/images/configure.png" alt=""  />
-          <h2> Manage Your Site</h2>
-        </div>
-
-            <div id="cmsplus-websites-panel" style="display:none;">
-                 <div class="leftSide"></div>   
-                 <div class="domainname-wrapper">
-                  <div class="domainArea">www.domainnamedomainname.com</div>  
-                 </div>
-                 <div class="rightSide"></div>
+    <div id="cmsplus-header-menu-wrapper">
+        <div style="height: 49px">
+            <img src="css/images/cms-header-logo.png" alt="" style="background-color: Transparent; border: solid 0px transparent;
+                padding: 0px" />
+            <div id="cmsplus-rootmenu-master">
+                <img src="css/images/configure.png" alt="" />
+                <h2>
+                    Manage Your Site</h2>
             </div>
         </div>
-        <input type="button" value="ShowMessage" onclick="NotificationManager.ShowProgress('aa');" style="display:none;" />
-        <input type="button" value="ShowMessage" onclick="NotificationManager.HideProgress();" style="display:none;"/>
     </div>
     <div id="cmsplus-management-root-menu">
         <div class="striptBlock">
@@ -146,7 +125,6 @@
             </div>
         </div>
     </div>
-  
     <div id="cmsplus-management-notification">
         <div class="icon">
             <img src="css/images/notification-info.png" alt="" />
@@ -154,33 +132,40 @@
         <div class="message">
             Saving your theme please wait..</div>
     </div>
-    
-    
     <div id="cmsplus-management-toolbar">
-       <ul id="toolbarmenu">
-        <li>
-           <a href="#"><img src="css/images/edit.png" alt="" /></a> 
-        </li>
-        <li>
-           <a href="#"><img src="css/images/widget.png" alt="" /></a> 
-        </li>
-        <li>
-           <a href="#"><img src="css/images/theme.png" alt="" /></a> 
-        </li>
-        <li>
-           <a href="#"><img src="css/images/preview.png" alt="" /></a> 
-        </li>
-        <li class="backLava" style="overflow: hidden; left: 240px; top: 0px; width: 60px; height: 50px; display: block;">
-        </li>
-    </ul>    
+        <ul id="cmsplus-toolbarmenu">
+            <li id="edit"><a href="javascript:noop();">
+                <img src="css/images/edit.png" alt="" /></a> </li>
+            <li id="widgets"><a href="javascript:noop();">
+                <img src="css/images/widget.png" alt="" /></a> </li>
+            <li id="theme"><a href="javascript:noop();">
+                <img src="css/images/theme.png" alt="" /></a> </li>
+            <li id="preview"><a href="javascript:noop();">
+                <img src="css/images/preview.png" alt="" /></a> </li>
+            <li class="active-menuitem-background" 
+                style="overflow: hidden; left: 189px; top: 0px; width: 36px;
+                height: 33px; display: block;"></li>
+        </ul>
     </div>
-        
+    
+    <div id="cmsplus-theme-panel">
+        <div class="wrapper" >
+          <div class="image-area">
+            image
+          </div>
+          <div class="description">
+             Desc
+          </div>
+        </div>
+    </div>
+    
     
     <div id="wrap">
+        
         <!--header -->
         <div id="header">
             <h1 id="logo-text">
-                <a href="index.html" title="">techjunkie</a></h1>
+                <a href="index.html" title="">Page 1</a></h1>
             <p id="slogan">
                 put your site slogan here...</p>
             <form id="quick-search" action="index.html" method="get">
@@ -205,6 +190,9 @@
             </ul>
             <!-- navigation ends-->
         </div>
+        
+        
+        
         <!-- content-wrap starts -->
         <div id="content-wrap">
             <div id="main">
@@ -212,7 +200,7 @@
                     <div class="widget movable collapsable removable editable closeconfirm">
                         <div class="widget-header">
                             <div style="float: left">
-                                <a href="index.html" title="">Template Info</a>
+                                <a href="index.html" title="">Page 1</a>
                             </div>
                         </div>
                         <div class="widget-editbox">
@@ -327,6 +315,8 @@
             </div>
             <!-- content-wrap ends-->
         </div>
+        
+        
         <!-- footer starts -->
         <div id="footer-wrap">
             <div id="footer-content">
@@ -401,5 +391,13 @@
         </div>
         <!-- wrap ends here -->
     </div>
+    
+    
+    
+    
+    
+    
+    
+    
 </body>
 </html>
