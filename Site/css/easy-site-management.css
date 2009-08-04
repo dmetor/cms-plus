@@ -1,277 +1,399 @@
-﻿body {
+﻿body
+{
 }
 
-#cms-header-menu-wrapper
+#cmsplus-header-menu-wrapper
 {
-    position:           fixed;
-    left:               0px;
-    top:                0px;
-    z-index:            4950;
-    font-family:		Tahoma, Arial, Helvetica, Geneva, sans-serif !important;
-    text-transform:		none !important;
-    text-decoration:    none !important;
-    text-align:         left !important;
-    font-size:          9px !important; 
-    font-style:			normal !important;
-    line-height:        11px !important;
-    letter-spacing:		normal !important;
-    color:				#F2F2F2 !important;
-    width:				100%;
-    height:				80px;
-    background:			url(images/cms-header-menu-wrapper-bac.png) repeat-x;
-    /*
-    opacity: 0.9;
-	-moz-opacity: 0.9;
-    filter: alpha(opacity=90);    
-    */
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	z-index: 4950;
+	font-family: Tahoma, Arial, Helvetica, Geneva, sans-serif !important;
+	text-transform: none !important;
+	text-decoration: none !important;
+	text-align: left !important;
+	font-size: 9px !important;
+	font-style: normal !important;
+	line-height: 11px !important;
+	letter-spacing: normal !important;
+	color: #F2F2F2 !important;
+	width: 100%;
+	height: 64px;
+	background: url(images/cmsplus-header-bg.gif) repeat-x;
+	border-bottom: solid 1px #17120E; /*     opacity: 0.9; 	-moz-opacity: 0.9;     filter: alpha(opacity=90);         */
 }
+
+#cmsplus-theme-panel
+{
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	z-index: 4951;
+	font-family: Tahoma, Arial, Helvetica, Geneva, sans-serif !important;
+	text-transform: none !important;
+	text-decoration: none !important;
+	text-align: left !important;
+	font-size: 9px !important;
+	font-style: normal !important;
+	line-height: 11px !important;
+	letter-spacing: normal !important;
+	color: #F2F2F2 !important;
+	width: 100%;
+	background-color: #1F1914;
+	height: 80px;
+	border-bottom: solid 1px #17120E;
+}
+
 
 #header-menu-logo_header-menu
 {
-    margin-top:9px;
-    margin-left:5px;  
-    cursor:pointer;  
+	margin-top: 9px;
+	margin-left: 5px;
+	cursor: pointer;
 }
 
-.header-menu-logo_header-menu-hover  
+.header-menu-logo_header-menu-hover
 {
-    background-image: url(images/header-menu-logo0.png); 
-    background-repeat: no-repeat; 
-    background-position: -0px -55px; 
-    width: 131px; height: 55px; 
+	background-image: url(images/header-menu-logo0.png);
+	background-repeat: no-repeat;
+	background-position: -0px -55px;
+	width: 131px;
+	height: 55px;
 }
 
 #cmsplus-management-root-menu
 {
-    position:           fixed;
-    left:               0px;    
-    top:                80px;
-    background-color:#1F1914;
-    width:1100px;
-    height:180px;
-    display:none;   
-    z-index:            4951;
-    color:#DDDDDD;
-    /*
-    opacity: 0.9;
-	-moz-opacity: 0.9;
-    filter: alpha(opacity=90);      
-    */
+	position: fixed;
+	left: 0px;
+	top: 65px;
+	background-color: #1F1914;
+	width: 1100px;
+	height: 180px;
+	display: none;
+	z-index: 4951;
+	color: #DDDDDD; /*     opacity: 0.9; 	-moz-opacity: 0.9;     filter: alpha(opacity=90);           */
 }
 
 #cmsplus-management-root-menu .striptBlock
 {
-    float:left;
-    margin-top:10px;
-    text-align:left;
-    margin-left:10px;
+	float: left;
+	margin-top: 10px;
+	text-align: left;
+	margin-left: 10px;
 }
 
 #cmsplus-management-root-menu .striptBlock h2
 {
-    font-size:12px;
+	font-size: 12px;
 }
 
 
 #cmsplus-management-root-menu .menuitems-wrapper
 {
-    padding-right:3px;
-    width:160px;   
-    border-right:1px dotted #7F2E02; 
+	padding-right: 3px;
+	width: 160px;
+	border-right: 1px dotted #7F2E02;
 }
 
 #cmsplus-management-root-menu .menuitems-wrapper-last
 {
-
 }
 
 
 #cmsplus-rootmenu-master
 {
-    position:fixed;top:40px;left:50px;
-    width:175px;
-    height:34px;
-    cursor:pointer;
-    /*background:url(images/rootmenu-selected.png) no-repeat;*/
+	position: fixed;
+	top: 30px;
+	left: 50px;
+	width: 175px;
+	height: 34px;
+	cursor: pointer; /*background:url(images/rootmenu-selected.png) no-repeat;*/
 }
 
 #cmsplus-rootmenu-master img
 {
-    background-color:Transparent;float:left;border:solid 0px transparent;
+	background-color: Transparent;
+	float: left;
+	border: solid 0px transparent;
 }
 
 #cmsplus-rootmenu-master h2
 {
-    margin-top:2px;
-    font-size:14px;
-    color:#ccc;
+	margin-top: 2px;
+	font-size: 14px;
+	color: #ccc;
 }
 
 #cmsplus-management-root-menu .menuitems-wrapper .menuItem
 {
-    width:100%;
-    /*background-color:#362C23; */
-    margin-bottom:2px;
-    margin-right:2px; 
-    text-indent:2px;
-    cursor:pointer;
+	width: 100%; /*background-color:#362C23; */
+	margin-bottom: 2px;
+	margin-right: 2px;
+	text-indent: 2px;
+	cursor: pointer;
 }
 
 
-.dashboard  
+.dashboard
 {
-    float:left;
-    margin-top:8px;
-    margin-right:5px;
-    background-image: url(images/header-menu.png); background-repeat: no-repeat; background-position: -24px -0px; width: 24px; height: 24px; }
+	float: left;
+	margin-top: 8px;
+	margin-right: 5px;
+	background-image: url(images/header-menu.png);
+	background-repeat: no-repeat;
+	background-position: -24px -0px;
+	width: 24px;
+	height: 24px;
+}
 
-.account  
+.account
 {
-    float:left;
-    margin-top:8px;
-    margin-right:5px;    
-    background-image: url(images/header-menu.png); background-repeat: no-repeat; background-position: -0px -0px; width: 24px; height: 24px; }
+	float: left;
+	margin-top: 8px;
+	margin-right: 5px;
+	background-image: url(images/header-menu.png);
+	background-repeat: no-repeat;
+	background-position: -0px -0px;
+	width: 24px;
+	height: 24px;
+}
 
-.data  
+.data
 {
-    float:left;
-    margin-top:8px;
-    margin-right:5px;   
-    background-image: url(images/header-menu.png); background-repeat: no-repeat; background-position: -48px -0px; width: 24px; height: 24px; }
+	float: left;
+	margin-top: 8px;
+	margin-right: 5px;
+	background-image: url(images/header-menu.png);
+	background-repeat: no-repeat;
+	background-position: -48px -0px;
+	width: 24px;
+	height: 24px;
+}
 
 
-.media  
+.media
 {
-    float:left;
-    margin-top:8px;
-    margin-right:5px;    
-    background-image: url(images/header-menu.png); background-repeat: no-repeat; background-position: -72px -0px; width: 24px; height: 24px; }
+	float: left;
+	margin-top: 8px;
+	margin-right: 5px;
+	background-image: url(images/header-menu.png);
+	background-repeat: no-repeat;
+	background-position: -72px -0px;
+	width: 24px;
+	height: 24px;
+}
 
 
-.member  
+.member
 {
-    float:left;
-    margin-top:8px;
-    margin-right:5px;   
-    background-image: url(images/header-menu.png); background-repeat: no-repeat; background-position: -96px -0px; width: 24px; height: 24px; }
+	float: left;
+	margin-top: 8px;
+	margin-right: 5px;
+	background-image: url(images/header-menu.png);
+	background-repeat: no-repeat;
+	background-position: -96px -0px;
+	width: 24px;
+	height: 24px;
+}
 
 
-.settings  
+.settings
 {
-    float:left;
-    margin-top:8px;
-    margin-right:5px;    
-    background-image: url(images/header-menu.png); background-repeat: no-repeat; background-position: -120px -0px; width: 24px; height: 24px; }
+	float: left;
+	margin-top: 8px;
+	margin-right: 5px;
+	background-image: url(images/header-menu.png);
+	background-repeat: no-repeat;
+	background-position: -120px -0px;
+	width: 24px;
+	height: 24px;
+}
 
-.statistics  
+.statistics
 {
-    float:left;
-    margin-top:8px;
-    margin-right:5px;    
-    background-image: url(images/header-menu.png); background-repeat: no-repeat; background-position: -144px -0px; width: 24px; height: 24px; 
+	float: left;
+	margin-top: 8px;
+	margin-right: 5px;
+	background-image: url(images/header-menu.png);
+	background-repeat: no-repeat;
+	background-position: -144px -0px;
+	width: 24px;
+	height: 24px;
 }
 
 
 
-  #cmsplus-management-notification
-  {
-  	position:fixed;
-  	z-index:60000;
-  	right:20px;
-  	border:solid 5px #2C231B;
-  	top:90px;
-    min-width:300px;
-    min-height:100px;
-    background-color:#1F1914;	
-    color:#fff;
-    display:none;
-    font-size:14px;
- 
-  }
+#cmsplus-management-notification
+{
+	position: fixed;
+	z-index: 60000;
+	right: 20px;
+	border: solid 5px #2C231B;
+	top: 90px;
+	min-width: 300px;
+	min-height: 100px;
+	background-color: #1F1914;
+	color: #fff;
+	display: none;
+	font-size: 14px;
+}
 
-  #cmsplus-management-notification .icon
-  {
-    float:left;
-    width:32px;
-    top:10px;
-  }
-  
-  #cmsplus-management-notification img
-  {
-    background-color:Transparent;  	
-    border:solid 1px Transparent !important;
-    margin:15px 10px 10px 5px;
-  }
+#cmsplus-management-notification .icon
+{
+	float: left;
+	width: 32px;
+	top: 10px;
+}
 
-
-  #cmsplus-management-notification .message
-  {
-    float:right;
-    margin:25px;  	
-  }
-  
+#cmsplus-management-notification img
+{
+	background-color: Transparent;
+	border: solid 1px Transparent !important;
+	margin: 15px 10px 10px 5px;
+}
 
 
-  
-  
+#cmsplus-management-notification .message
+{
+	float: right;
+	margin: 25px;
+}
+
+
+
+
+
 #cmsplus-management-toolbar
 {
-    position:           fixed;
-    right:               0px;    
-    top:               32px;
-    width:340px;
-    z-index:            4951;
-    margin:0px;
-}  
-  
-  
-#toolbarmenu
-{
-	margin:0px !important;
-	height:50px !important;
+	position: fixed;
+	right: 0px;
+	top: 31px;
+	width: 252px;
+	z-index: 4951;
+	margin: 0px;
 }
 
 
-#toolbarmenu li
+
+#cmsplus-toolbarmenu
 {
-    float: left;
-    list-style: none;  
-    margin-left:10px;  
-}
-#toolbarmenu li.backLava
-{
-    background: url( images/tool-back.png ) no-repeat ;
-    z-index: 8;
-    position: absolute;
+	margin: 0px !important;
+	height: 40px !important;
 }
 
-#toolbarmenu li a
+
+#cmsplus-toolbarmenu li
 {
-    font: bold 14px arial;
-    text-decoration: none;
-    color: #fff;
-    outline: none;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 0;
-    z-index: 10;
-    display: block;
-    float: left;
-    position: relative;
-    overflow: hidden;
-    margin-left:10px;  
-    height:50px;
+	float: left;
+	list-style: none;
+	margin-left: 10px;
+}
+#cmsplus-toolbarmenu li.active-menuitem-background
+{
+	background: url( images/tool-back.png ) no-repeat;
+	z-index: 8;
+	position: absolute;
 }
 
-#toolbarmenu li a img
+#cmsplus-toolbarmenu li a
 {
-    border:solid 0px Transparent;	
-    background: !important;
-    padding:0px !important;
-    margin-top:1px;
+	font: bold 14px arial;
+	text-decoration: none;
+	color: #fff;
+	outline: none;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 0;
+	z-index: 10;
+	display: block;
+	float: left;
+	position: relative;
+	overflow: hidden;
+	margin-left: 10px;
+	height: 50px;
 }
-#toolbarmenu li a:hover, #toolbarmenu li a:active, #toolbarmenu li a:visited
+
+#cmsplus-toolbarmenu li a img
 {
-    color: #fff;
-    border: none;
+	border: solid 0px Transparent;
+	background: transparent !important;
+	padding: 0px !important;
+	margin-top: 1px;
 }
+#cmsplus-toolbarmenu li a:hover, #cmsplus-toolbarmenu li a:active, #cmsplus-toolbarmenu li a:visited
+{
+	color: #fff;
+	border: none;
+}
+
+
+#cmsplus-websites-panel .rightSide
+{
+	background-image: url(css/images/cmsplus-dialogs0.png);
+	background-repeat: no-repeat;
+	background-position: -0px -184px;
+	width: 14px;
+	height: 21px;
+	float: right;
+}
+#cmsplus-websites-panel .leftSide
+{
+	background-image: url(css/images/cmsplus-dialogs0.png);
+	background-repeat: no-repeat;
+	background-position: -14px -184px;
+	width: 12px;
+	height: 21px;
+	float: left;
+}
+#cmsplus-websites-panel
+{
+	float: right;
+	margin-right: 10px;
+	height: 21px;
+	margin-top: 3px;
+}
+
+#cmsplus-websites-panel .domainname-wrapper
+{
+	min-width: 100px;
+	height: 21px;
+	background-color: #DB7C2C;
+	float: left;
+	color: #1F1914;
+}
+
+#cmsplus-websites-panel .domainArea
+{
+	margin-top: 4px;
+	float: left;
+	cursor: pointer;
+}
+
+
+#cmsplus-theme-panel .wrapper
+{
+	width: 100%;
+	height: 70px;
+	background-color: #1F1914;
+}
+
+#cmsplus-theme-panel .image-area
+{
+	float: left;
+	background-color: #eee;
+	width: 100px;
+	height: 50px;
+	color: #000;
+	padding: 10px;
+}
+
+#cmsplus-theme-panel .description
+{
+	float: left;
+	left: 110px;
+	color: #000;
+	padding: 10px;
+	font-size: 14px;
+	font-family: Tahoma, Arial, Helvetica, Geneva, sans-serif !important;
+}
+
