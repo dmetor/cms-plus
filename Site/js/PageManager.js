@@ -112,10 +112,7 @@ $(document).ready(function() {
 
 
 function EnableWidgets() {
-    $('.widget-menu').show();
     $.fn.EnableEasyWidgets();
-    HideThemeArea();
-
 	$(".widget").each(function() {
         $(this).css({ "border": "#AAACAD solid 3px" });
     });
@@ -123,12 +120,10 @@ function EnableWidgets() {
 	$(".widget-header").each(function() {	
 		$(this).css({  'background-color': '#D4DFE2', 'border-bottom':' 2px solid #454443'});
 	});		 
-
 }
 
 function DisableWidgets() {
     $.fn.DisableEasyWidgets();
-    $('.widget-menu').hide();
     $(".widget").each(function() {
          $(this).css({ "border": "Transparent solid 3px" });
     });
