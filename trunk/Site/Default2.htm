@@ -14,22 +14,52 @@
 
     <link rel="stylesheet" href="Templates/TechJunkie/images/TechJunkie.css" type="text/css" />
     <link href="css/widgets.css" rel="stylesheet" type="text/css" />
+    
+    <style>
+            
+        #widget-store ul {            
+            list-style-type:none;
+            margin:0 0 10px;
+            padding:0;
+        }
 
+        #widget-store li {
+            margin:5px;
+            padding:5px;
+            width:150px;
+        }
+
+        #widget-store .ui-state-highlight, .ui-widget-content .ui-state-highlight {
+            background:#FFE45C url(css/images/widget_ready_bg.png) repeat-x scroll 50% top;
+            border:1px solid #FED22F;
+            color:#363636;
+        }    
+    </style>
     <script language="javascript" type="text/javascript">
-      $(function(){
-          HeaderManager.InitManagementMenu();
-          
-          //just a spike code 
-          $("#cmsplus-management-root-menu .Overview").click(function(){
+        $(function() {
+            HeaderManager.InitManagementMenu();
+
+            $.fn.EasyWidgets(WidgetOptions);
+            //just a spike code 
+            $("#cmsplus-management-root-menu .Overview").click(function() {
                 $("#content-wrap").load("AnotherPage.htm?p" + Math.random());
-          });
-          $("#cmsplus-management-root-menu .Comments").click(function(){
+            });
+            $("#cmsplus-management-root-menu .Comments").click(function() {
                 $("#content-wrap").load("AnotherPage2.htm?p" + Math.random());
-          });
-          
-          
-          
-      })
+            });
+
+
+            $(".draggable").draggable({
+                connectToSortable: '.widget-place',
+                helper: 'clone',
+                revert: 'true'
+            })
+            $("ul, li").disableSelection();
+
+        });
+
+      
+      
     </script>
 
 </head>
@@ -169,6 +199,13 @@
         </div>
     </div>
     
+    <div id="widget-store" style="position:fixed; z-index:150000; width:180px;height:350px;border:solid 1px #000;right:5px;top:100px;">
+        <ul>
+	        <li class="draggable ui-state-highlight" widgetType="HtmlContent1">Drag me 1</li>
+	        <li class="draggable ui-state-highlight" widgetType="HtmlContent2">Drag me 2</li>
+        </ul>
+    </div>
+    
     
     <div id="wrap">
         
@@ -206,7 +243,7 @@
         <!-- content-wrap starts -->
         <div id="content-wrap">
             <div id="main">
-                <div class="widget-place">
+                <div class="widget-place" id="main-column">
                     <div class="widget movable collapsable removable editable closeconfirm">
                         <div class="widget-header">
                             <div style="float: left">
@@ -242,7 +279,7 @@
                 </div>
             </div>
             <div id="sidebar">
-                <div class="widget-place">
+                <div class="widget-place" id="side-bar">
                     <div class="widget movable collapsable removable editable closeconfirm">
                         <div class="widget-header">
                             <div style="float: left">
@@ -332,7 +369,7 @@
             <div id="footer-content">
                 <div id="footer-columns">
                     <div class="col3">
-                        <div class="widget-place">
+                        <div class="widget-place" id="footer-left">
                             <div class="widget movable collapsable removable editable closeconfirm">
                                 <div class="widget-header">
                                     <div style="float: left">
@@ -350,7 +387,7 @@
                         </div>
                     </div>
                     <div class="col3-center">
-                        <div class="widget-place">
+                        <div class="widget-place" id="footer-center">
                             <div class="widget movable collapsable removable editable closeconfirm">
                                 <div class="widget-header">
                                     <div style="float: left">
@@ -368,21 +405,8 @@
                         </div>
                     </div>
                     <div class="col3">
-                        <div class="widget-place">
-                            <div class="widget movable collapsable removable editable closeconfirm">
-                                <div class="widget-header">
-                                    <div style="float: left">
-                                        <strong>Widget 1</strong>
-                                    </div>
-                                </div>
-                                <div class="widget-editbox">
-                                    Edit the widget here
-                                </div>
-                                <div class="widget-content">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan fringilla turpis.
-                                    Lorem ipsum dolor.
-                                </div>
-                            </div>
+                        <div class="widget-place" id="footer-right">
+                            
                         </div>
                     </div>
                     <!-- footer-columns ends -->
