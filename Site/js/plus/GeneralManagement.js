@@ -36,7 +36,7 @@ var WidgetOptions = {
 }
 
 function EnableWidgets() {
-        $.fn.EasyWidgets(WidgetOptions);
+        //$.fn.EasyWidgets(WidgetOptions);
         $.fn.EnableEasyWidgets();
         
         /*  
