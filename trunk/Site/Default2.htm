@@ -24,16 +24,50 @@
         }
 
         #widget-store li {
-            margin:5px;
             padding:5px;
             width:150px;
         }
 
-        #widget-store .ui-state-highlight, .ui-widget-content .ui-state-highlight {
+        #widget-store .ui-state-highlight {
             background:#FFE45C url(css/images/widget_ready_bg.png) repeat-x scroll 50% top;
             border:1px solid #FED22F;
             color:#363636;
         }    
+        
+        #widget-store
+        {
+            position:fixed; 
+            z-index:10000; 
+            width:250px; 
+            margin:0px;
+            height:350px;
+            border:solid 1px #000;
+            right:0px;
+            top:100px; 
+        }
+        
+        #widget-store .header
+        {
+            width:100%;
+            height:64px;      
+            text-align:left;
+            background-color:#000;
+            color:#CCCCCC;
+            padding-left:10px; 
+            font-weight:bold;  
+            border-bottom:solid 1px #31251C;   
+        }
+        
+        #widget-store ul
+        {
+            background-color: #17120E;
+        }
+        
+        #widget-store li
+        {
+            width:100%;    
+        }
+        
     </style>
     <script language="javascript" type="text/javascript">
         $(function() {
@@ -188,22 +222,29 @@
         </ul>
     </div>
     
-    <div id="cmsplus-theme-panel" style="display:none">
-        <div class="wrapper" >
-          <div class="image-area">
-            image
-          </div>
-          <div class="description">
-             Desc
-          </div>
-        </div>
-    </div>
     
-    <div id="widget-store" style="position:fixed; z-index:150000; width:180px;height:350px;border:solid 1px #000;right:5px;top:100px;">
+    
+    <div id="widget-store">
+        <div class="header">
+          AVAILABLE MODULES
+        </div>
         <ul>
-	        <li class="draggable ui-state-highlight" widgetType="HtmlContent1">Drag me 1</li>
-	        <li class="draggable ui-state-highlight" widgetType="HtmlContent2">Drag me 2</li>
+	        <li class="draggable" widgetType="HtmlContent1">
+	           <table border=1>
+	             <tr>
+	              <td>
+        	           <img src="css/images/widget-html.png" alt="" style="background-color:Transparent;border:solid 0px transparent;" />	                
+	              </td>
+	             </tr>
+	           </table>
+	            
+	        </li>
+	        <li class="draggable" widgetType="HtmlContent2">
+	           <img src="css/images/widget-image.png" alt="" style="background-color:Transparent;border:solid 0px transparent;" />
+	        </li>
+
         </ul>
+        
     </div>
     
     
