@@ -8,10 +8,11 @@
 
     <script src="js/plus/jquery-ui.min.js" type="text/javascript"></script>
     <script src="js/plus/jquery.easywidgets.js" type="text/javascript"></script>
-
+    
     <script src="js/plus/GeneralManagement.js" type="text/javascript"></script>
     <link href="css/easy-site-management.css" rel="stylesheet" type="text/css" />
 
+    <script src="js/plus/jquery.tools.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="Templates/TechJunkie/images/TechJunkie.css" type="text/css" />
     <link href="css/widgets.css" rel="stylesheet" type="text/css" />
     
@@ -38,35 +39,68 @@
         {
             position:fixed; 
             z-index:10000; 
-            width:250px; 
+            width:200px; 
             margin:0px;
-            height:350px;
-            border:solid 1px #000;
+            border:solid 1px #31251C;
             right:0px;
             top:100px; 
+            background-color:#231B14;
+        }
+        
+        #widget-store-wrapper
+        {
+            overflow:auto;
+            height:460px;            
         }
         
         #widget-store .header
         {
             width:100%;
-            height:64px;      
+            height:40px;      
             text-align:left;
-            background-color:#000;
+            background-color:#231B14;
             color:#CCCCCC;
             padding-left:10px; 
             font-weight:bold;  
             border-bottom:solid 1px #31251C;   
         }
         
-        #widget-store ul
+        #widget-store .draggable
         {
-            background-color: #17120E;
+            background-color: Transparent;
         }
         
-        #widget-store li
+       
+        #widget-store .draggable table
         {
-            width:100%;    
+            margin:0px;
+            width:100%;
+            background-color:Transparent;
         }
+
+        #widget-store .draggable table td
+        {
+            border:0px;
+            padding:0px;
+            background-color:Transparent;
+        }
+        
+        #widget-store .draggable table td.widget-description, .widget-description
+        {
+            font-weight:bold;
+            font-size:13px;
+            color:#ccc;
+        }
+
+        
+        
+        #widget-store .draggable table tr {
+            background:transparent none repeat scroll 0 0;
+            height:auto;
+        }
+
+
+
         
     </style>
     <script language="javascript" type="text/javascript">
@@ -89,6 +123,7 @@
                 revert: 'true'
             })
             $("ul, li").disableSelection();
+
 
         });
 
@@ -199,6 +234,7 @@
             </div>
         </div>
     </div>
+    
     <div id="cmsplus-management-notification">
         <div class="icon">
             <img src="css/images/notification-info.png" alt="" />
@@ -206,6 +242,7 @@
         <div class="message">
             Saving your theme please wait..</div>
     </div>
+    
     <div id="cmsplus-management-toolbar">
         <ul id="cmsplus-toolbarmenu">
             <li id="edit"><a href="javascript:noop();">
@@ -225,25 +262,115 @@
     
     
     <div id="widget-store">
-        <div class="header">
-          AVAILABLE MODULES
+        <div class="header widget-description">
+         Available Modules
         </div>
-        <ul>
-	        <li class="draggable" widgetType="HtmlContent1">
-	           <table border=1>
-	             <tr>
-	              <td>
-        	           <img src="css/images/widget-html.png" alt="" style="background-color:Transparent;border:solid 0px transparent;" />	                
-	              </td>
-	             </tr>
-	           </table>
-	            
-	        </li>
-	        <li class="draggable" widgetType="HtmlContent2">
-	           <img src="css/images/widget-image.png" alt="" style="background-color:Transparent;border:solid 0px transparent;" />
-	        </li>
+        
+        <div id="widget-store-wrapper">
+        
+           
+	        <div class="draggable" widgetType="HtmlContent1">
+                <table>
+                 <tr>
+                   <td>
+                        <img src="css/images/widget-html.png" alt="" style="background-color:Transparent;border:solid 0px transparent;" />   
+                   </td>
+                 </tr>
+                 <tr>
+                   <td class="widget-description">
+                       Html
+                   </td>
+                 </tr>
+                 </table>
+	        </div>
+	        <div class="draggable" widgetType="HtmlContent2">
+                <table>
+                 <tr>
+                   <td>
+        	           <img src="css/images/widget-image.png" alt="" style="background-color:Transparent;border:solid 0px transparent;" />
+                   </td>
+                 </tr>
+                 <tr>
+                   <td class="widget-description">
+                       Image
+                   </td>
+                 </tr>
+                 </table>
 
-        </ul>
+	        </div>
+	        <div class="draggable" widgetType="HtmlContent2">
+                <table>
+                 <tr>
+                   <td>
+        	           <img src="css/images/widget-chat.png" alt="" style="background-color:Transparent;border:solid 0px transparent;" />
+                   </td>
+                 </tr>
+                 <tr>
+                   <td class="widget-description">
+                       Chat
+                   </td>
+                 </tr>
+                 </table>
+	        </div>
+	        <div class="draggable" widgetType="HtmlContent2">
+                <table>
+                 <tr>
+                   <td>
+        	           <img src="css/images/widget-map.png" alt="" style="background-color:Transparent;border:solid 0px transparent;" />
+                   </td>
+                 </tr>
+                 <tr>
+                   <td class="widget-description">
+                       Map
+                   </td>
+                 </tr>
+                 </table>
+	        </div>    
+	        <div class="draggable" widgetType="HtmlContent2">
+                <table>
+                 <tr>
+                   <td>
+        	           <img src="css/images/widget-video.png" alt="" style="background-color:Transparent;border:solid 0px transparent;" />
+                   </td>
+                 </tr>
+                 <tr>
+                   <td class="widget-description">
+                       Video
+                   </td>
+                 </tr>
+                 </table>
+	        </div>	        
+	        <div class="draggable" widgetType="HtmlContent2">
+                <table>
+                 <tr>
+                   <td>
+        	           <img src="css/images/widget-blog.png" alt="" style="background-color:Transparent;border:solid 0px transparent;" />
+                   </td>
+                 </tr>
+                 <tr>
+                   <td class="widget-description">
+                       Blog
+                   </td>
+                 </tr>
+                 </table>
+	        </div>	        
+	        <div class="draggable" widgetType="HtmlContent2">
+                <table>
+                 <tr>
+                   <td>
+        	           <img src="css/images/widget-calendar.png" alt="" style="background-color:Transparent;border:solid 0px transparent;" />
+                   </td>
+                 </tr>
+                 <tr>
+                   <td class="widget-description">
+                       Calendar
+                   </td>
+                 </tr>
+                 </table>
+	        </div>	
+        </div>
+
+
         
     </div>
     
