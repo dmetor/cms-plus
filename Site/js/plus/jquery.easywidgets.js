@@ -1012,6 +1012,7 @@
             handle: s.selectors.header,
             delay: s.behaviour.dragDelay,
             revert: true,
+            forcePlaceholderSize: true,
             opacity: s.behaviour.dragOpacity,
             connectWith: $(s.selectors.places),
             placeholder: s.selectors.placeHolder,

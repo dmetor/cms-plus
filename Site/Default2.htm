@@ -42,7 +42,7 @@
             width:200px; 
             margin:0px;
             border:solid 1px #31251C;
-            right:0px;
+            right:5px;
             top:100px; 
             background-color:#231B14;
         }
@@ -55,7 +55,6 @@
         
         #widget-store .header
         {
-            width:100%;
             height:40px;      
             text-align:left;
             background-color:#231B14;
@@ -120,7 +119,8 @@
             $(".draggable").draggable({
                 connectToSortable: '.widget-place',
                 helper: 'clone',
-                revert: 'true'
+                revert: false,
+                scroll: true
             })
             $("ul, li").disableSelection();
 
