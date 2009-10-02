@@ -14,10 +14,6 @@
     
     <link href="css/easy-site-management.css" rel="stylesheet" type="text/css" />
 
-    <script src="js/plus/pngfix.js" type="text/javascript"></script>
-<!--[if lt IE 7]>
-<script defer type="text/javascript" src="pngfix.js"></script>
-<![endif]-->
 
     <script src="js/plus/jquery.tools.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="Templates/TechJunkie/images/TechJunkie.css" type="text/css" />
@@ -129,6 +125,7 @@
 
         
     </style>
+    
     <script language="javascript" type="text/javascript">
         $(function() {
             HeaderManager.InitManagementMenu();
@@ -166,7 +163,7 @@
 
 </head>
 <body>
-    <div id="cmsplus-header-menu-wrapper">
+    <div id="cmsplus-header-menu-wrapper" style="display:none">
         <div style="height: 49px">
             <img src="css/images/cms-header-logo.png" alt="" style="background-color: Transparent; border: solid 0px transparent;
                 padding: 0px" />
@@ -177,7 +174,7 @@
             </div>
         </div>
     </div>
-    <div id="cmsplus-management-root-menu">
+    <div id="cmsplus-management-root-menu" style="display:none">
         <div class="striptBlock">
             <div class="dashboard">
             </div>
@@ -267,14 +264,14 @@
             </div>
         </div>
     </div>
-    <div id="cmsplus-management-notification">
+    <div id="cmsplus-management-notification" style="display:none">
         <div class="icon">
             <img src="css/images/notification-info.png" alt="" />
         </div>
         <div class="message">
             Saving your theme please wait..</div>
     </div>
-    <div id="cmsplus-management-toolbar">
+    <div id="cmsplus-management-toolbar" style="display:none">
         <ul id="cmsplus-toolbarmenu">
             <li id="edit"><a href="javascript:noop();">
                 <img src="css/images/edit.png" alt="" /></a> </li>
@@ -292,7 +289,7 @@
     
     
     
-    <div id="widget-store">
+    <div id="widget-store" style="display:none">
         <div class="header widget-description">
             <div class="Title">Widgets</div>
             <div class="Description">Listing available widgets</div>
